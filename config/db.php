@@ -1,9 +1,16 @@
 <?php
 
+$url = parse_url(getenv('CLEARDB_DATABASE_URL'));
+
+$server = isset($url['host']) ? $url['host'] : 'localhost';
+$username = isset($url['user']) ? $url['user'] : 'root';
+$password = isset($url['pass']) ? $url['pass'] : '';
+$db = isset($url['path']) ? substr($url['path'], 1) : 'resizer';
+
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=heroku_84b4dbbd7682be8',
-    'username' => 'bae2da9d0b24ab',
-    'password' => '81444624',
+    'dsn' => "mysql:host={$server};dbname={$db}",
+    'username' => $username,
+    'password' => $password,
     'charset' => 'utf8',
 ];
