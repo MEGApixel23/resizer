@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
+Options All -Indexes
+<FilesMatch "\.(htaccess|git.*|ini|phps|fla|psd|log|sh|md)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
