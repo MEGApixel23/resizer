@@ -75,4 +75,15 @@ class User extends \yii\db\ActiveRecord implements UserInterface
     {
         return $this->hasMany(Image::className(), ['user_id' => 'id']);
     }
+
+    /**
+     * @param string $token
+     * @return self|null
+     */
+    public static function findByToken($token)
+    {
+        return User::find()->joinWith(['devices' => function ($query) use ($token) {
+            return $query->where(['token' => $token]);
+        }], true, 'INNER JOIN')->limit(1)->one();
+    }
 }
