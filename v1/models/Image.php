@@ -4,6 +4,7 @@ namespace app\v1\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\Url;
 
 /**
  * This is the model class for table "image".
@@ -18,7 +19,7 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property User $user
  */
-class Image extends \yii\db\ActiveRecord implements ImageInterface
+class Image extends AppActiveRecord implements ImageInterface
 {
     /**
      * @inheritdoc
@@ -69,5 +70,22 @@ class Image extends \yii\db\ActiveRecord implements ImageInterface
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @return string
+     */
+    public static function basePath()
+    {
+        return Yii::getAlias('@app') . '/web/uploads';
+    }
+
+    /**
+     * Full URL to image
+     * @return string
+     */
+    public function getUrl()
+    {
+        return Url::to(['/uploads'], true);
     }
 }
