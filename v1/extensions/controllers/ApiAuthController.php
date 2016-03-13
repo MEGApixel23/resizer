@@ -36,6 +36,10 @@ class ApiAuthController extends ApiController
         return false;
     }
 
+    /**
+     * @param array $data
+     * @return bool
+     */
     public function notAllowed(array $data = [])
     {
         $response = &Yii::$app->response;
