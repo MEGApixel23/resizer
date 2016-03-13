@@ -19,7 +19,7 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "fxp/composer-asset-plugin": "*",
-        "ext-gd": "*"
+        "yiisoft/yii2-imagine": "^2.0@dev"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
