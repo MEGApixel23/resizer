@@ -21,9 +21,11 @@ class ImageController extends ApiAuthController
         ]);
 
         return call_user_func(function ($images) {
+            $result = [];
+
             /* @var $images Image[] */
             foreach ($images as $image) {
-                yield [
+                $result[] = [
                     'id' => $image->id,
                     'url' => $image->getUrl(),
                     'width' => $image->width,
@@ -31,6 +33,8 @@ class ImageController extends ApiAuthController
                     'date' => date('c', $image->created_at),
                 ];
             }
+
+            return $result;
         }, $provider->getModels());
     }
 
