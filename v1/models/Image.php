@@ -35,11 +35,18 @@ class Image extends AppActiveRecord implements ImageInterface
     public function rules()
     {
         return [
-            [['user_id', 'width', 'height', 'created_at', 'updated_at'], 'integer'],
+            [[
+                'user_id', 'width', 'height',
+                'created_at', 'updated_at'
+            ], 'integer'],
             [['width', 'height', 'filename'], 'required'],
             [['filename'], 'string', 'max' => 255],
             [['filename'], 'unique'],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
+            [['user_id'], 'exist',
+                'skipOnError' => true,
+                'targetClass' => User::className(),
+                'targetAttribute' => ['user_id' => 'id']
+            ],
         ];
     }
 
@@ -86,6 +93,6 @@ class Image extends AppActiveRecord implements ImageInterface
      */
     public function getUrl()
     {
-        return Url::to(['/uploads'], true);
+        return Url::to(['/uploads'], true) . '/' . $this->filename;
     }
 }
