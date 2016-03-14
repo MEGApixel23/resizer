@@ -1,5 +1,6 @@
 <?php
 
+// Heroku DB intagration params.
 $url = parse_url(getenv('CLEARDB_DATABASE_URL'));
 
 $scheme = isset($url['scheme']) ? $url['scheme'] : 'mysql';

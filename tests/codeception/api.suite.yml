@@ -1,0 +1,10 @@
+class_name: ApiTester
+modules:
+    enabled:
+        [ApiHelper, PhpBrowser, REST, Asserts]
+    config:
+        REST:
+            depends: PhpBrowser
+            url: http://localhost:8080/index-test.php
+        PhpBrowser:
+            url: http://localhost:8080

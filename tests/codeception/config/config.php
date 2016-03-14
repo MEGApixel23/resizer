@@ -1,7 +1,5 @@
 <?php
-/**
- * Application configuration shared by all test types
- */
+
 return [
     'language' => 'en-US',
     'controllerMap' => [
@@ -14,7 +12,11 @@ return [
     ],
     'components' => [
         'db' => [
-            'dsn' => 'mysql:host=localhost;dbname=yii2_basic_tests',
+            'class' => 'yii\db\Connection',
+            'dsn' => "mysql:host=localhost;dbname=resizer_test",
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
         ],
         'mailer' => [
             'useFileTransport' => true,
