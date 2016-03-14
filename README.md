@@ -2,10 +2,10 @@ Resizer API
 ===========
 
 Resizer is a simple app written on Yii2 framework. It's used for image resizing with given params.
-Project has been created as test task for [Yalantis](https://yalantis.com)
+Project has been created as a test task for [Yalantis](https://yalantis.com)
 
 ### Documentation
-Full API documentation is listed [here](http://docs.resizer.apiary.io/#)
+Full API documentation is listed on [apiary](http://docs.resizer.apiary.io/#)
 
 ### Installation
 1. Run ```composer install``` in project root directory.
