@@ -12,6 +12,14 @@ Full API documentation is listed [here](http://docs.resizer.apiary.io/#)
 2. Edit config file ```/config/db.php``` and specify your dsn connection string.
 3. Run DB migrations with ```php yii migrate```
 
+### Code
+Yii2 has a little bit complex structure, so here is source code where main aplication logic is stored. This is what you are probably looking for.
+
+Controllers : [v1/controllers/](https://github.com/MEGApixel23/resizer/tree/master/v1/controllers)
+Models: [v1/models/](https://github.com/MEGApixel23/resizer/tree/master/v1/models)
+Configuration: [config/web.php](https://github.com/MEGApixel23/resizer/blob/master/config/web.php)
+Tests: [tests/codeception/api/](https://github.com/MEGApixel23/resizer/tree/master/tests/codeception/api)
+
 ### Tests
 Tests for this API are developed with [Codeception PHP Testing Framework](http://codeception.com/). To run API tests you need to do a lot of stuff.
 
