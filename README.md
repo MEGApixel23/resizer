@@ -12,7 +12,7 @@ Full API documentation is listed [here](http://docs.resizer.apiary.io/#)
 2. Edit config file ```/config/db.php``` and specify your dsn connection string.
 3. Run DB migrations with ```php yii migrate```
 
-### Tests [TODO]
+### Tests
 Tests for this API are developed with [Codeception PHP Testing Framework](http://codeception.com/). To run API tests you need to do a lot of stuff.
 
 1. Install Codeception if it's not yet installed:
